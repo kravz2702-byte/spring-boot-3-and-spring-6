@@ -1,13 +1,13 @@
-package com.boot.chapter3oas;
+package com.boot.chapter03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Chapter3OasApplication {
+public class Chapter03Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Chapter3OasApplication.class, args);
+        SpringApplication.run(Chapter03Application.class, args);
     }
 
 }

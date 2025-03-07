@@ -1,10 +1,10 @@
-package com.boot.chapter3oas;
+package com.boot.chapter03;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Chapter3OasApplicationTests {
+class Chapter03ApplicationTests {
 
     @Test
     void contextLoads() {
