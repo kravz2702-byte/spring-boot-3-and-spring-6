@@ -1,4 +1,4 @@
-package com.boot.chapter03.api;
+package com.boot.chapter03.entity;
 
 import jakarta.persistence.*;
 
@@ -19,7 +19,7 @@ public class CartEntity {
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
     private UserEntity user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "CART_ITEM",
             joinColumns = @JoinColumn(name = "CART_ID"),

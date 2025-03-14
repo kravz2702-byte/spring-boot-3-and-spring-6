@@ -1,4 +1,4 @@
-package com.boot.chapter03.api;
+package com.boot.chapter03.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
