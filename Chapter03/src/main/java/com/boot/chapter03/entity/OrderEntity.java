@@ -36,8 +36,8 @@ public class OrderEntity {
     @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
     private PaymentEntity paymentEntity;
 
-    @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
     @OneToOne
+    @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
     private ShipmentEntity shipment;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

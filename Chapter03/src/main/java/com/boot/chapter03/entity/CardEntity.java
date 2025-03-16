@@ -2,8 +2,9 @@ package com.boot.chapter03.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
-
 @Entity
 @Table(name = "card")
 public class CardEntity {
@@ -21,7 +22,7 @@ public class CardEntity {
     @Column(name = "CVV")
     private String cvv;
 
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
     private UserEntity user;
 

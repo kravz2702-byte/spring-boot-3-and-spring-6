@@ -2,6 +2,7 @@ package com.boot.chapter03.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity

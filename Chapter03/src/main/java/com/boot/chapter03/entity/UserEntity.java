@@ -15,7 +15,7 @@ public class UserEntity {
     @Column(name = "ID", updatable = false, nullable = false)
     private UUID id;
 
-    @NotNull(message = "Username is required")
+    @NotNull(message = "User name is required.")
     @Basic(optional = false)
     @Column(name = "USERNAME")
     private String username;
@@ -40,11 +40,11 @@ public class UserEntity {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
-            name = "USER_ADRESS",
+            name = "USER_ADDRESS",
             joinColumns = @JoinColumn(name = "USER_ID"),
             inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
     )
-    private List<AddressEntity> adresses = new ArrayList<>();
+    private List<AddressEntity> addresses = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<CardEntity> cards;
@@ -54,6 +54,10 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<OrderEntity> orders;
+
+    public UUID getId() {
+        return id;
+    }
 
     public UserEntity setId(UUID id) {
         this.id = id;
@@ -159,8 +163,4 @@ public class UserEntity {
         this.orders = order;
         return this;
     }
-
-
-
-
 }
