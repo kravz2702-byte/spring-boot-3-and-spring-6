@@ -17,7 +17,7 @@ public interface ItemRepository extends CrudRepository<ItemEntity, UUID> {
     JOIN ecomm.item i ON ci.item_id = i.id
     WHERE u.id = :customerId""",
             nativeQuery = true)
-    Iterable<ItemEntity> findByCustomerId(String customerId);
+    Iterable<ItemEntity> findByCustomerId(UUID customerId);
 
     @Modifying
     @Query(
