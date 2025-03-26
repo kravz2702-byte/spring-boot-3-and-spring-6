@@ -32,6 +32,7 @@ public class OrderRepositoryImpl implements OrderRepositoryExt{
     @Override
     public Optional<OrderEntity> insert(NewOrder m){
         Iterable<ItemEntity> dbItems = itemRepo.findByCustomerId(m.getCustomerId());
+        return Optional.empty();
     }
 
 }
