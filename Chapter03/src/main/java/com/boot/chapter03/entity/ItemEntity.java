@@ -21,7 +21,7 @@ public class ItemEntity {
     private ProductEntity product;
 
     @Column(name = "UNIT_PRICE")
-    private BigDecimal price;
+    private Double price;
 
     @Column(name = "QUANTITY")
     private int quantity;
@@ -50,11 +50,11 @@ public class ItemEntity {
         return this;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public ItemEntity setPrice(BigDecimal price) {
+    public ItemEntity setPrice(Double price) {
         this.price = price;
         return this;
     }

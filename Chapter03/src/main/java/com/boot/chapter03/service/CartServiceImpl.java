@@ -3,11 +3,13 @@ package com.boot.chapter03.service;
 import com.boot.chapter03.entity.CartEntity;
 import com.boot.chapter03.entity.ItemEntity;
 import com.boot.chapter03.exceptions.CustomerNotFoundException;
+import com.boot.chapter03.exceptions.GenericAlreadyExistsException;
 import com.boot.chapter03.exceptions.ItemNotFoundException;
 import com.boot.chapter03.model.Item;
 import com.boot.chapter03.repository.CartRepository;
 import com.boot.chapter03.repository.UserRepository;
 import jakarta.validation.Valid;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.objenesis.instantiator.util.UnsafeUtils.getUnsafe;
 
+@Service
 public class CartServiceImpl implements CartService {
 
     private final CartRepository repository;
@@ -108,5 +111,4 @@ public class CartServiceImpl implements CartService {
         }
         return itemService.toModel(itemEntity.get());
     }
-
 }
